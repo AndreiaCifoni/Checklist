@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 
-const Checklist = () => {
+const Checklist = ({ questionary }) => {
   const [check, setCheck] = useState(false);
 
   const onChangeHandler = (event) => {
     setCheck(event.target.checked);
   };
 
+  const questions = questionary.map((question) => {
+    return (
+      <div>
+        <input type="checkbox" onChange={onChangeHandler} />
+        {question.query}
+        {check ? "Yes" : "No"}
+      </div>
+    );
+  });
+
   return (
     <form>
-      <input type="checkbox" onChange={onChangeHandler} />
-      <label>ABC? {check ? "Yes" : "No"}</label>
+      <ul>
+        <li>
+          <label>{questions}</label>
+        </li>
+      </ul>
     </form>
   );
 };
