@@ -1,15 +1,15 @@
 import React from "react";
-import Checklist from "./Checklist";
+import QuestionList from "./QuestionList";
 
-const questionary = [
-  { id: "1", query: "Do you live in Canada?" },
-  { id: "2", query: "Do you like hokey?" },
+const questions = [
+  { question: "Do you live in Canada?" },
+  { question: "Do you like hokey?" },
 ];
 
 const App = () => {
   return (
     <div>
-      <Checklist questionary={questionary} />
+      <QuestionList questions={questions} />
     </div>
   );
 };
